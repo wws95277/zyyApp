@@ -1,30 +1,28 @@
 import React, { Component }  from 'react'
-// 引入 Swiper, SwiperItem 组件
-import {View, Button, Text} from '@tarojs/components'
-import Taro from '@tarojs/taro'
+import {View,Text} from '@tarojs/components'
+import './MyHealth.less'
 
 
 
 
-class MyButton extends Component {
-  Step1(){
-    Taro.navigateTo({url:'../diagnosises/DStep1'})
-  }
-  Step2(){
-    Taro.navigateTo({url:'../diagnosises/DStep2'})
-  }
-  Step3(){
-    Taro.navigateTo({url:'../diagnosises/DStep3'})
-   }
+class MyHealth extends Component {
+
   render () {
     return (
-    <View className='index' class="btn">
-      <Button class='btn1' size="mini" onClick={this.Step1.bind(this)} >国医堂</Button>
-      <Button class='btn2' size="mini" onClick={this.Step2.bind(this)} >预约挂号</Button>
-      <Button class='btn3' size="mini"  onClick={this.Step3.bind(this)}>智能导诊</Button>
-
-      </View>
+    <View className='at-row Health' class="btn">
+      <view className='at-col at-col-6 home-mid-left'>
+      <view className="zy1">
+        <Text className="zzz at-col--wrap">中医健康管理知识宣教</Text>
+      </view>
+    </view>
+      <view className='at-col at-col-6 right'>
+        <view className="tz2">
+          <Text className="xxx">【体质辨识】</Text>
+          <Text className="ccc">判定量表</Text>
+        </view>
+      </view>
+    </View>
     )
   }
 }
-export default MyButton
+export default MyHealth

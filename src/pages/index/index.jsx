@@ -1,10 +1,12 @@
 import { Component } from 'react'
 import { connect } from 'react-redux'
 import { View, Button, Text } from '@tarojs/components'
-
 import { add, minus, asyncAdd } from '../../actions/counter'
-
+import { AtSearchBar } from 'taro-ui'
 import './index.less'
+import MySwiper from './MySwiper'
+import MyButton from './MyButton'
+import MyHealth from "./MyHealth";
 
 
 @connect(({ counter }) => ({
@@ -34,11 +36,10 @@ class Index extends Component {
   render () {
     return (
       <View className='index'>
-        <Button className='add_btn' onClick={this.props.add}>+</Button>
-        <Button className='dec_btn' onClick={this.props.dec}>-</Button>
-        <Button className='dec_btn' onClick={this.props.asyncAdd}>async</Button>
-        <View><Text>{this.props.counter.num}</Text></View>
-        <View><Text>你好呀</Text></View>
+        <AtSearchBar  placeholder="搜索国医堂"/>
+        <MySwiper/>
+        <MyButton/>
+        <MyHealth/>
       </View>
     )
   }
